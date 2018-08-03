@@ -1,0 +1,25 @@
+---
+dependency:
+  name: galaxy
+  options:
+    role-file: requirements.yml
+driver:
+  driver:
+  name: docker
+platforms:
+  - name: centos
+    image: centos/systemd
+    command: /sbin/init
+    capabilities:
+      - SYS_ADMIN
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - /tmp:/run
+provisioner:
+  name: ansible
+  playbooks:
+    converge: ../../ansible/playbook.yml
+  env:
+    ANSIBLE_ROLES_PATH: /tmp/molecule/ansible/default:../roles
+scenario:
+  name: default

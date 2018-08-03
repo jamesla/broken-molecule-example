@@ -1,0 +1,8 @@
+---
+
+- hosts: all
+  become: true
+  # roles:
+  # - {role: satellite-register, register: true}
+  # - {role: ansible-role-greenbook}
+  # - {role: satellite-register, register: false}
