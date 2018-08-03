@@ -18,7 +18,7 @@ platforms:
 provisioner:
   name: ansible
   playbooks:
-    converge: ../../ansible/playbook.yml
+    converge: ../../playbook.yml
   env:
     ANSIBLE_ROLES_PATH: /tmp/molecule/ansible/default:../roles
 scenario:
